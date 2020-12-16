@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+</head>
+<body>
+<p>hello</p>
+<script type="text/javascript">
+ $.ajax({
+	url: 'api/name',
+})
+.done(function(text) {
+	$('#txt').html(text);
+});
+</script>
+ <div id="txt"></div> 
+</body>
+</html>

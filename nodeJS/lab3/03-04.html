@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width"/>
+	<title></title>
+</head>
+<body>
+	<div id="res"></div>
+<script type="text/javascript">
+	res.innerHTML='';
+	let n=0;
+	const d=Date.now();
+	for(var k=0;k<21;k++){
+		fetch('http://localhost:3000/fib?k='+k,{
+			method:'GET',mode:'no-cors',
+			headers:{'Content-Type':'application/json','Accept':'application/json'}
+		}
+	).then(response=>{return response.json();}).
+		then((pdata)=>{
+			res.innerHTML+=(n++)+'.Result:'+(Date.now()-d)+'-'+pdata.k+'/'+pdata.fib+'<br/>';
+		});
+	}
+</script>
+</body>
+</html>

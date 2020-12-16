@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>hello</p>
+<script type="text/javascript">
+async function fet() {
+let response = await fetch('/api/name');
+
+let text = await response.text(); // прочитать тело ответа как текст
+document.getElementById("txt").innerHTML = text;
+}
+fet();
+</script>
+ <div id="txt"></div> 
+</body>
+</html>

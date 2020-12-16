@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>10-01</h1>
+<script type="text/javascript">
+	let k=0;
+	function startWS() {
+		let socket=new WebSocket('ws:/localhost:4000/wsserver');
+		socket.onopen=()=>{
+			console.log('socket.onopen');
+			setInterval(()=>{
+				socket.send('10-01-client: '+(++k));
+			},3000);
+			setTimeout(()=>{
+				socket.close()
+			},25000);
+			socket.onclose=(e)=>{
+				console.log(e);
+			};
+			socket.onmessage=(e)=>{
+				console.log(e.data);
+			};
+			socket.onerror=function(error) {
+				alert(error.message);
+			};
+
+		}
+	}
+</script>
+<button onclick="startWS()">startWS</button>
+</body>
+</html>

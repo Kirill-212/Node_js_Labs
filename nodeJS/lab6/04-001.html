@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width"/>
+	<title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script type="text/javascript">
+	function Post(){
+		console.log('post');
+		fetch('http://localhost:3000/send',{
+			method:'POST',mode:'no-cors',
+			headers:{'Content-Type':'application/json','Accept':'application/json'},
+			body:JSON.stringify({From: from.value,To:to.value,Message:Message.value})
+		}
+		)
+		.then(response=>{return response.json();})
+		.then((pdata)=>{console.log('POST pdata',pdata);});
+		ID.innerHTML='';
+		Name.innerHTML='';
+		Bday.innerHTML='';
+
+	}
+	
+
+</script>
+</head>
+<body>
+<br/>
+<div style="padding: 20px">
+	<div class="row">
+		<label class="col-2">Отправитель</label>
+		<input type="text" class="col-3" id="from" />
+	</div>
+		<div class="row">
+		<label class="col-2">Получатель</label>
+		<input type="text" class="col-3" id="to">
+	</div>
+	<div class="row">
+		<label class="col-2">Сообщение</label>
+		<input type="text" class="col-3" id="Message">
+	</div>
+	<div class="row">
+		<button class="col-2" onclick="Post()" >POST</button>
+	</div>
+</body>
+</html>

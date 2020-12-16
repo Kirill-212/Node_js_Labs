@@ -1,0 +1,24 @@
+{
+  "name": "m0604",
+  "version": "1.0.1",
+  "description": "send mail message",
+  "main": "06-03.js",
+  "dependencies": {
+    "@kirill-212/mmmm0604": "^1.0.1",
+    "m060401": "^1.0.0",
+    "nodemailer": "^6.4.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "--"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kirill-212"
+  },
+  "keywords": [
+    "--"
+  ],
+  "author": "Kirill",
+  "license": "UNLICENSED"
+}
